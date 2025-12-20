@@ -10,7 +10,7 @@ export const spotifyHandler: DeepLinkHandler = {
 
     return {
       webUrl,
-      ios: `spotify://${type}/${id}`,
+      ios: `spotify:${type}:${id}`,
       android: `intent://${type}/${id}#Intent;scheme=spotify;package=com.spotify.music;end`,
       platform: 'spotify',
     };
