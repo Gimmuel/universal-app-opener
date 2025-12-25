@@ -1,4 +1,4 @@
-import { DeepLinkHandler } from '../types';
+import { DeepLinkHandler, DeepLinkResult } from '../types'
 
 /**
  * Match result:
@@ -23,63 +23,54 @@ export const linkedinHandler: DeepLinkHandler = {
 
       // Job
       ['job', /linkedin\.com\/jobs\/view\/([^/?#]+)/],
-    ];
+    ]
 
     for (const [type, regex] of patterns) {
-      const matchResult = url.match(regex);
+      const matchResult = url.match(regex)
       if (matchResult) {
-        // Normalize into a predictable match array
-        return [matchResult[0], type, matchResult[1]] as RegExpMatchArray;
+        return [matchResult[0], type, matchResult[1]] as RegExpMatchArray
       }
     }
 
-    return null;
+    return null
   },
 
   build: (webUrl, match) => {
-    const type = match[1];
-    const id = match[2];
+    const type = match[1]
+    const id = match[2]
 
-    switch (type) {
-      case 'profile':
-        return {
-          webUrl,
-          ios: `linkedin://in/${id}`,
-          android: `intent://in/${id}#Intent;scheme=linkedin;package=com.linkedin.android;end`,
-          platform: 'linkedin',
-        };
+    const builderMap: Record<string, () => DeepLinkResult> = {
+      profile: () => ({
+        webUrl,
+        ios: `linkedin://in/${id}`,
+        android: `intent://in/${id}#Intent;scheme=linkedin;package=com.linkedin.android;end`,
+        platform: 'linkedin',
+      }),
 
-      case 'post':
-        return {
-          webUrl,
-          ios: `linkedin://urn:li:activity:${id}`,
-          android: `intent://urn:li:activity:${id}#Intent;scheme=linkedin;package=com.linkedin.android;end`,
-          platform: 'linkedin',
-        };
+      post: () => ({
+        webUrl,
+        ios: `linkedin://urn:li:activity:${id}`,
+        android: `intent://urn:li:activity:${id}#Intent;scheme=linkedin;package=com.linkedin.android;end`,
+        platform: 'linkedin',
+      }),
 
-      case 'company':
-        return {
-          webUrl,
-          ios: `linkedin://company/${id}`,
-          android: `intent://company/${id}#Intent;scheme=linkedin;package=com.linkedin.android;end`,
-          platform: 'linkedin',
-        };
+      company: () => ({
+        webUrl,
+        ios: `linkedin://company/${id}`,
+        android: `intent://company/${id}#Intent;scheme=linkedin;package=com.linkedin.android;end`,
+        platform: 'linkedin',
+      }),
 
-      case 'job':
-        return {
-          webUrl,
-          ios: `linkedin://job/${id}`,
-          android: `intent://job/${id}#Intent;scheme=linkedin;package=com.linkedin.android;end`,
-          platform: 'linkedin',
-        };
-
-      default:
-        return {
-          webUrl,
-          ios: null,
-          android: null,
-          platform: 'linkedin',
-        };
+      job: () => ({
+        webUrl,
+        ios: `linkedin://job/${id}`,
+        android: `intent://job/${id}#Intent;scheme=linkedin;package=com.linkedin.android;end`,
+        platform: 'linkedin',
+      }),
     }
+
+    return builderMap[type]
+      ? builderMap[type]()
+      : { webUrl, ios: null, android: null, platform: 'linkedin' }
   },
-};
+}
