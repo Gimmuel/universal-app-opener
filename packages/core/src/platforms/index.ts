@@ -8,6 +8,7 @@ import { whatsappHandler } from './whatsapp';
 import { threadsHandler } from "./threads";
 import { redditHandler } from './reddit';
 import { discordHandler } from './discord';
+import { githubHandler } from "./github";
 
 export {
     linkedinHandler,
@@ -19,6 +20,7 @@ export {
     facebookHandler,
     redditHandler,
     discordHandler,
+    githubHandler,
     unknownHandler
 }
 
